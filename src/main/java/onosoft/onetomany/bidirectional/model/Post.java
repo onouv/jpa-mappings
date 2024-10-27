@@ -20,7 +20,7 @@ public class Post {
     private String title;
 
     @OneToMany(
-            mappedBy = "post",
+            mappedBy = "parentPost",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
@@ -33,7 +33,7 @@ public class Post {
     public Comment addComment(@NonNull String review) {
         Comment comment = new Comment(review);
         this.comments.add(comment);
-        comment.setPost(this);
+        comment.setParentPost(this);
 
         return comment;
     }

@@ -20,14 +20,14 @@ public class Comment {
     private String review;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Post post;
+    private Post parentPost;
 
     public Comment(String review) {
         this.review = review;
     }
 
     public List<Comment> getSiblings() {
-        return this.post
+        return this.parentPost
                 .getComments()
                 .stream()
                 .filter(comment -> comment.id != this.id)
