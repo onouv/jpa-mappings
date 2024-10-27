@@ -5,10 +5,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity(name = "Comment")
 @Table(name = "onetomany-unidirectional-comments")
 @Data
+@NoArgsConstructor
 public class Comment {
 
     @Id
@@ -16,4 +18,8 @@ public class Comment {
     private Long id;
 
     private String review;
+
+    public Comment(String review) {
+        this.review = review;
+    }
 }

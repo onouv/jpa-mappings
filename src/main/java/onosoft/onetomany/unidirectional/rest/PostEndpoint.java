@@ -7,13 +7,12 @@ import jakarta.ws.rs.core.MediaType;
 import onosoft.onetomany.unidirectional.model.Post;
 import onosoft.onetomany.unidirectional.persistence.PostRepository;
 import org.jboss.resteasy.reactive.RestResponse;
-import org.jboss.resteasy.reactive.common.jaxrs.RestResponseImpl;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Path("post/uni")
-public class PostResource {
+public class PostEndpoint {
 
     @Inject
     PostRepository postRepository;
@@ -40,9 +39,7 @@ public class PostResource {
 
         List<PostDTO> payload = posts
                 .stream()
-                .map(post -> {
-                    return PostDTO.of(post);
-                })
+                .map(post -> PostDTO.of(post))
                 .collect(Collectors.toList());
 
         return RestResponse.ok(payload);

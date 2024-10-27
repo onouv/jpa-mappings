@@ -9,6 +9,10 @@ import java.util.stream.Collectors;
 
 @Data
 public class PostDTO {
+
+    @NonNull
+    private Long id;
+
     @NonNull
     private String title;
 
@@ -20,12 +24,11 @@ public class PostDTO {
         List<String> comments = post
                 .getComments()
                 .stream()
-                .map(comment -> {
-                    return comment.getReview();
-                })
+                .map(comment -> comment.getReview())
                 .collect(Collectors.toList());
 
         return new PostDTO(
+                post.getId(),
                 post.getTitle(),
                 comments
         );

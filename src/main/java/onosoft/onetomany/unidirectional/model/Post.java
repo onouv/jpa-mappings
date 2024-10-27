@@ -30,4 +30,11 @@ public class Post {
     public Post(@NonNull String title) {
         this.title = title;
     }
+
+    public Comment addComment(@NonNull String review) {
+        Comment comment = new Comment(review);
+        this.comments.add(comment);
+
+        return comment;
+    }
 }
