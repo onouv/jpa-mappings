@@ -3,6 +3,7 @@ package onosoft.onetomany.bidirectional.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,6 +21,7 @@ public class Comment {
     private String review;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @NonNull
     private Post parentPost;
 
     public Comment(String review) {

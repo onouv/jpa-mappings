@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide empty members
+
+class Post {
+    @Id
+    Long id
+    ..
+    @OneToMany {mappedBy=parentPost}
+    List<Comment> comments
+    ..
+    String title
+}
+
+class Comment {
+    @Id Long id
+    ..
+    @ManyToOne
+    Post parentPost
+    ..
+    String review
+}
+
+Post "1" o-- "0..*" Comment
+@enduml
