@@ -76,6 +76,39 @@ and database tables will be automatically generated similar to this schema
 
 ![DB Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/doc_unidirect/doc/onetomany/unidirect/database.puml)
 
+### Bidirectional 
+When interpreting above domain model as *bidirectional*, we
+decide that it should be possible to reference the owning Post (the parent) from a given Comment (the child) to do 
+something useful with it.
+
+#### Hibernate Implementation
+The necessary annotations should be made according to this model:
+
+![Implementation Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/doc_unidirect/doc/onetomany/bidirect/hibernate.class.puml)
+
+Sources: [`Post`](src/main/java/onosoft/onetomany/bidirectional/model/Post.java)
+and [`Comment`](src/main/java/onosoft/onetomany/bidirectional/model/Comment.java)
+
+Special Points:
+- The forward reference from parent to its children is marked with `@OneToMany`, but holds 
+no `JoinColumn` annotation like in the unidirectional variant
+- The backwards reference from each child back to the parent is marked with `@ManyToOne`
+- The `mappedBy` parameter to the `@OneToMany` annotation in the parent must mention 
+the *exact* name of the corresponding field marked as `@ManyToOne` in the child. I found this very confusing 
+in many examples found elsewhere and personally think that's a quite ugly coupling uncheckable by the compiler.
+Therefore, at least try to keep such coupled classes in the same package.
+- The `@Entity` annotations have been given names to avoid
+  name collisions with the various `Post` and `Comment` classes
+  in other packages.
+
+#### Database Schema
+The Hibernate annotations in the [`Post`](src/main/java/onosoft/onetomany/bidirectional/model/Post.java)
+and [`Comment`](src/main/java/onosoft/onetomany/bidirectional/model/Comment.java)
+model classes will be processed by the hibernate implementation at runtime
+and database tables will be automatically generated similar to this schema
+
+![DB Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/doc_unidirect/doc/onetomany/bidirect/database.puml)
+
 
 ## Get started
 
