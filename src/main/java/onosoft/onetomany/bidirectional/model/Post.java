@@ -1,16 +1,15 @@
-package onosoft.onetomany.unidirectional.model;
+package onosoft.onetomany.bidirectional.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name="PostUnidirect")
-@Table(name="onetomany_unidirect_posts")
+@Entity(name="Postbidirect")
+@Table(name="onetomany_bidirect_posts")
 @Data
 @NoArgsConstructor
 public class Post {
@@ -21,10 +20,10 @@ public class Post {
     private String title;
 
     @OneToMany(
+            mappedBy = "post",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    @JoinColumn(name = "post_id")
     private List<Comment> comments = new ArrayList<>();
 
     public Post(@NonNull String title) {
@@ -34,6 +33,7 @@ public class Post {
     public Comment addComment(@NonNull String review) {
         Comment comment = new Comment(review);
         this.comments.add(comment);
+        comment.setPost(this);
 
         return comment;
     }

@@ -1,17 +1,17 @@
-package onosoft.onetomany.unidirectional.rest;
+package onosoft.onetomany.bidirectional.rest;
 
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import onosoft.onetomany.unidirectional.model.Post;
-import onosoft.onetomany.unidirectional.persistence.PostRepository;
+import onosoft.onetomany.bidirectional.model.Post;
+import onosoft.onetomany.bidirectional.persistence.PostRepository;
 import org.jboss.resteasy.reactive.RestResponse;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Path("post/unidirect")
+@Path("post/bidirect")
 public class PostEndpoint {
 
     @Inject

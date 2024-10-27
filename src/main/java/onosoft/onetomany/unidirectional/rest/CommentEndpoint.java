@@ -11,7 +11,7 @@ import org.jboss.resteasy.reactive.RestResponse;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Path("comment/uni")
+@Path("comment/unidirect")
 public class CommentEndpoint {
 
     @Inject

@@ -7,8 +7,8 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "Comment")
-@Table(name = "onetomany-unidirectional-comments")
+@Entity(name = "CommentUnidirect")
+@Table(name = "onetomany_unidirect_comments")
 @Data
 @NoArgsConstructor
 public class Comment {
