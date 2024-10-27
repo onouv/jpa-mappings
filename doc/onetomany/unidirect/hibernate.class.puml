@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide empty members
+
+class Post {
+    @Id
+    Long id
+    ..
+    @OneToMany
+    @JoinColumn(name = "post_id")
+    List<Comment> comments
+    ..
+    String title
+}
+
+class Comment {
+    @Id
+    Long id
+    ..
+    String review
+}
+
+Post "1" o-- "0..*" Comment
+@enduml

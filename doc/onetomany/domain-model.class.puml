@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide empty members
+
+class Post {
+    +id: Long
+    +title: String
+}
+class Comment {
+    +id: Long
+    +review: String
+}
+
+Post "1" o-- "0..*" Comment
+@enduml
