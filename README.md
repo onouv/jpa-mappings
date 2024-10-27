@@ -36,7 +36,7 @@ In the conceptual design, i.e. the mind of the implementer,
 a domain model should be present in the form shown here or 
 in any other sufficient form.
 
-![Domain Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/doc_unidirect/doc/onetomany/domain-model.class.puml)
+![Domain Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/main/doc/onetomany/domain-model.class.puml)
 
 This essentially expresses, that 
 - a Post may have none, one or many
@@ -52,7 +52,7 @@ Post (its parent). This may be sufficient, depending on our business domain.
 #### Hibernate Implementation
 The necessary annotations should be made according to this model:  
 
-![Implementation Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/doc_unidirect/doc/onetomany/unidirect/hibernate.class.puml)
+![Implementation Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/main/doc/onetomany/unidirect/hibernate.class.puml)
 
 Sources: [`Post`](src/main/java/onosoft/onetomany/unidirectional/model/Post.java)
 and [`Comment`](src/main/java/onosoft/onetomany/unidirectional/model/Comment.java)  
@@ -74,7 +74,7 @@ and [`Comment`](src/main/java/onosoft/onetomany/unidirectional/model/Comment.jav
 model classes will be processed by the hibernate implementation at runtime
 and database tables will be automatically generated similar to this schema  
 
-![DB Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/doc_unidirect/doc/onetomany/unidirect/database.puml)
+![DB Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/main/doc/onetomany/unidirect/database.puml)
 
 ### Bidirectional 
 When interpreting above domain model as *bidirectional*, we
@@ -84,7 +84,7 @@ something useful with it.
 #### Hibernate Implementation
 The necessary annotations should be made according to this model:
 
-![Implementation Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/doc_unidirect/doc/onetomany/bidirect/hibernate.class.puml)
+![Implementation Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/main/doc/onetomany/bidirect/hibernate.class.puml)
 
 Sources: [`Post`](src/main/java/onosoft/onetomany/bidirectional/model/Post.java)
 and [`Comment`](src/main/java/onosoft/onetomany/bidirectional/model/Comment.java)
@@ -107,7 +107,7 @@ and [`Comment`](src/main/java/onosoft/onetomany/bidirectional/model/Comment.java
 model classes will be processed by the hibernate implementation at runtime
 and database tables will be automatically generated similar to this schema
 
-![DB Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/doc_unidirect/doc/onetomany/bidirect/database.puml)
+![DB Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/main/doc/onetomany/bidirect/database.puml)
 
 
 ## Get started
