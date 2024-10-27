@@ -30,7 +30,6 @@ public class PostDTO {
         return new PostDTO(
                 post.getId(),
                 post.getTitle(),
-                comments
-        );
+                comments);
     }
 }
