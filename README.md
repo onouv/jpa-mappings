@@ -16,7 +16,7 @@ In the conceptual design, i.e. the mind of the implementer,
 a domain model should be present in the form shown here or 
 in any other sufficient form.
 
-![Domain Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/expenses/doc_unidirect/doc/domain-model.class.puml)
+![Domain Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/doc_unidirect/doc/onetomany/domain-model.class.puml)
 
 This essentially expresses, that a Post may have none, one or many
 Comments, and that each Comment must be owned by a single post.
@@ -29,13 +29,13 @@ Post (its parent). This may be sufficient, depending on our business domain.
 
 #### Hibernate Implementation
 The necessary annotations should be made according to this model:
-![Implementation Model]((http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/expenses/doc_unidirect/doc/)
+![Implementation Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/doc_unidirect/doc/onetomany/unidirect/hibernate.class.puml)
 
 #### Database Schema
 The Hibernate annotations will be processed by 
 the jakarta runtime and database tables will be automatically 
 generated similar to this schema
-![DB Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/expenses/doc_unidirect/doc/)
+![DB Model](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/onouv/jpa-mappings/doc_unidirect/doc/onetomany/unidirect/database.puml)
 
 
 ## Get started
